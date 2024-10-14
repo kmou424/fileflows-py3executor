@@ -111,7 +111,7 @@ def __parse_args():
         return
     input_args = json.loads(sys.argv[1])
     if "FlowArgs" in input_args:
-        Flow.init_variables(input_args["FlowArgs"])
+        Flow.init_variables(json.loads(input_args["FlowArgs"]))
     if "HelperArgs" in input_args:
         __split_args(input_args["HelperArgs"])
 
