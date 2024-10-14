@@ -15,6 +15,11 @@ function Script(PyFile, Args)
     })]
     });
 
+    if (process.exitCode != 0) {
+        Logger.ELog("Failed on " + process.exitCode);
+        return -1;
+    }
+
     if (process.standardOutput) {
         let stdout = String(process.standardOutput).trim().split("\n")
         let export_vars = JSON.parse(stdout[stdout.length - 1]);
@@ -25,11 +30,6 @@ function Script(PyFile, Args)
 
     if (process.starndardError)
         Logger.ILog("error: ", process.starndardError);
-
-    if (process.exitCode != 0) {
-        Logger.ELog("Failed on " + process.exitCode);
-        return -1;
-    }
 
     return 1;
 }
