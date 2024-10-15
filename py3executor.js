@@ -1,5 +1,7 @@
 /**
  * @description Executes any .py file using python3. Supports parameters and setting Flow variables.
+ * @author kmou424
+ * @version 1.0
  * @param {string} PyFile Path to the .py file
  * @param {string} Args Parameters in key-value pair format, formatted as [KEY=VALUE], allowing multiple settings, e.g., [WORKDIR=/mnt/workdir] [TEMP={temp}]
  * @param {string} SetWorkingFile Path to the file to set as the working file. Supports parameters in the format of [KEY] to replace with Flow variables at end of execution.
